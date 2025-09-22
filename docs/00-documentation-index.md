@@ -54,6 +54,14 @@ Welcome to your complete Neovim and Tmux learning resource! This documentation i
 - Repository templates and quick setup
 - Troubleshooting Git integration issues
 
+### 💻 [08. Full-Stack Development Workflow](08-fullstack-development-workflow.md)
+**Complete professional development example**
+- Next.js 15.5 + TypeScript 5.9 + pnpm 9.x setup
+- Multi-monitor tmux sessions for development
+- Database operations with Prisma ORM
+- Real-time development with Turbopack
+- Git workflow integration and deployment
+
 ---
 
 ## 🎯 Learning Path Recommendation

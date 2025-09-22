@@ -42,6 +42,7 @@ Complete learning resources in the `docs/` directory:
 - **[🏋️ Practice Exercises](docs/04-practice-exercises.md)** - Structured learning path
 - **[🖱️ Mouse Support Guide](docs/05-mouse-support-guide.md)** - Complete mouse integration
 - **[🔧 Git Integration Guide](docs/06-git-integration-guide.md)** - Professional Git workflow
+- **[💻 Full-Stack Development Workflow](docs/08-fullstack-development-workflow.md)** - Complete project example
 
 ## 🎮 Key Bindings
 
