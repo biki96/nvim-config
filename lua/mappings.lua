@@ -15,10 +15,53 @@ map("i", "<C-k>", "<Up>", { desc = "Move up" })
 
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "General Clear highlights" })
 
-map("n", "<C-h>", "<C-w>h", { desc = "Switch window left" })
-map("n", "<C-l>", "<C-w>l", { desc = "Switch window right" })
-map("n", "<C-j>", "<C-w>j", { desc = "Switch window down" })
-map("n", "<C-k>", "<C-w>k", { desc = "Switch window up" })
+-- Smart navigation: vim windows or tmux panes
+local function navigate_left()
+  local win_count = vim.fn.winnr('$')
+  if win_count > 1 then
+    vim.cmd('wincmd h')
+  else
+    vim.fn.system('tmux select-pane -L')
+  end
+end
+
+local function navigate_down()
+  local win_count = vim.fn.winnr('$')
+  if win_count > 1 then
+    vim.cmd('wincmd j')
+  else
+    vim.fn.system('tmux select-pane -D')
+  end
+end
+
+local function navigate_up()
+  local win_count = vim.fn.winnr('$')
+  if win_count > 1 then
+    vim.cmd('wincmd k')
+  else
+    vim.fn.system('tmux select-pane -U')
+  end
+end
+
+local function navigate_right()
+  local win_count = vim.fn.winnr('$')
+  if win_count > 1 then
+    vim.cmd('wincmd l')
+  else
+    vim.fn.system('tmux select-pane -R')
+  end
+end
+
+map("n", "<C-h>", navigate_left, { desc = "Navigate left (vim/tmux)" })
+map("n", "<C-l>", navigate_right, { desc = "Navigate right (vim/tmux)" })
+map("n", "<C-j>", navigate_down, { desc = "Navigate down (vim/tmux)" })
+map("n", "<C-k>", navigate_up, { desc = "Navigate up (vim/tmux)" })
+
+-- Force tmux navigation (bypass vim windows)
+map("n", "<leader><C-h>", function() vim.fn.system('tmux select-pane -L') end, { desc = "Force tmux left" })
+map("n", "<leader><C-l>", function() vim.fn.system('tmux select-pane -R') end, { desc = "Force tmux right" })
+map("n", "<leader><C-j>", function() vim.fn.system('tmux select-pane -D') end, { desc = "Force tmux down" })
+map("n", "<leader><C-k>", function() vim.fn.system('tmux select-pane -U') end, { desc = "Force tmux up" })
 
 map("n", "<C-s>", "<cmd>w<CR>", { desc = "File save" })
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "File copy whole" })

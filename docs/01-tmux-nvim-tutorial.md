@@ -67,17 +67,25 @@ Ctrl-b &        Kill current window
 ## 🧭 Tmux + Neovim Navigation
 
 ### Seamless Pane Navigation
-Your config includes `vim-tmux-navigator` which allows seamless movement:
+Your config includes smart navigation that works from within Neovim:
 
-**From Neovim OR Tmux:**
+**Smart Navigation (Auto-detects context):**
 ```
-Ctrl-h          Move left (works across tmux/nvim)
-Ctrl-j          Move down (works across tmux/nvim)
-Ctrl-k          Move up (works across tmux/nvim)
-Ctrl-l          Move right (works across tmux/nvim)
+Ctrl-h          Navigate left (vim windows OR tmux panes)
+Ctrl-j          Navigate down (vim windows OR tmux panes)
+Ctrl-k          Navigate up (vim windows OR tmux panes)
+Ctrl-l          Navigate right (vim windows OR tmux panes)
 ```
 
-**Alternative Navigation (Your tmux config):**
+**Force Tmux Navigation (Bypass vim windows):**
+```
+<space>Ctrl-h   Force tmux pane left
+<space>Ctrl-j   Force tmux pane down
+<space>Ctrl-k   Force tmux pane up
+<space>Ctrl-l   Force tmux pane right
+```
+
+**Alternative Navigation (Always available):**
 ```
 Alt-Left        Select pane left
 Alt-Right       Select pane right

@@ -92,12 +92,15 @@ K           Show documentation
 <leader>gb  Toggle git blame
 ```
 
-### Window Management
+### Navigation (Smart: Vim Windows OR Tmux Panes)
 ```
-Ctrl-h      Move left window
-Ctrl-j      Move down window
-Ctrl-k      Move up window
-Ctrl-l      Move right window
+Ctrl-h      Navigate left (smart)
+Ctrl-j      Navigate down (smart)
+Ctrl-k      Navigate up (smart)
+Ctrl-l      Navigate right (smart)
+<space>Ctrl-h/j/k/l  Force tmux pane switching
+Alt-arrows  Always tmux panes
+Mouse click Switch panes visually
 ```
 
 ---
