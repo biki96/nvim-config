@@ -47,14 +47,22 @@ Welcome to your complete Neovim and Tmux learning resource! This documentation i
 - Merge conflict resolution
 - Code sharing and blame annotations
 
-### 🚀 [07. Git Repository Setup](07-git-repository-setup.md)
+### 💾 [07. Tmux Session Persistence](07-tmux-session-persistence.md)
+**Sessions that survive reboots automatically**
+- tmux-resurrect and tmux-continuum setup
+- Auto-save every 15 minutes, auto-restore on start
+- Neovim session integration
+- Manual save/restore controls
+- Troubleshooting and advanced workflows
+
+### 🚀 [08. Git Repository Setup](08-git-repository-setup.md)
 **Create and manage Git repositories from Neovim**
 - Initialize new repositories from within Neovim
 - Convert existing projects to Git
 - Repository templates and quick setup
 - Troubleshooting Git integration issues
 
-### 💻 [08. Full-Stack Development Workflow](08-fullstack-development-workflow.md)
+### 💻 [09. Full-Stack Development Workflow](09-fullstack-development-workflow.md)
 **Complete professional development example**
 - Next.js 15.5 + TypeScript 5.9 + pnpm 9.x setup
 - Multi-monitor tmux sessions for development

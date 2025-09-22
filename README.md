@@ -8,6 +8,7 @@ A complete, mouse-friendly, AI-enhanced development environment with seamless tm
 - 🤖 **Claude Code integration** for AI-assisted development
 - ⚡ **Modern plugins** - blink.cmp, oil.nvim, fzf-lua, avante.nvim
 - 🧭 **Seamless navigation** between tmux panes and vim windows
+- 💾 **Session persistence** - tmux sessions survive reboots automatically
 - 🎨 **NvChad UI** with 2025 optimizations
 - 📦 **Smart LSP setup** with Mason and modern vim.lsp.config
 - 🔧 **Git integration** - 7 plugins for complete Git workflow
@@ -17,10 +18,17 @@ A complete, mouse-friendly, AI-enhanced development environment with seamless tm
 
 1. **Prerequisites completed** ✅ (pnpm, Claude CLI installed)
 2. **Configuration installed** ✅ (symlinked to ~/.config/nvim)
-3. **Start development environment:**
+3. **Setup tmux session persistence:**
 
 ```bash
-# Start tmux session
+# Install tmux plugins for session persistence
+./setup-tmux-plugins.sh
+```
+
+4. **Start development environment:**
+
+```bash
+# Start tmux session (sessions auto-persist across reboots!)
 tmux new-session -s dev
 
 # Open Neovim (plugins install automatically)
@@ -83,6 +91,16 @@ K               Hover documentation
 <leader>hs      Stage hunk
 <leader>gb      Toggle git blame
 ```
+
+### Session Management
+```
+Prefix + Ctrl-s  Manual save session
+Prefix + Ctrl-r  Manual restore session
+Prefix + R       Reload tmux config
+Prefix + I       Install tmux plugins
+```
+
+> **Auto-persistence**: Sessions save every 15 minutes and restore automatically on tmux start!
 
 ## 🛠️ Configuration Structure
 
